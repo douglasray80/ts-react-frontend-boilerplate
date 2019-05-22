@@ -1,10 +1,18 @@
 import * as React from 'react'
 
-interface IProps {
+interface Props {
 	isAString: string
 	isANum: number
 }
 
-const App: React.FC<IProps> = ({ isAString, isANum }) => <div>App</div>
+const App: React.FC<Props> = ({ isAString, isANum }) => {
+	const [count, setCount] = React.useState(4)
+
+	React.useEffect(() => {
+		console.log(count)
+	}, [])
+
+	return <div>App</div>
+}
 
 export default App
